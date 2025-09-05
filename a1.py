@@ -40,12 +40,23 @@ Write a program that asks the user to input a number. If the number is divisible
 PROBLEM 3: Looping with for
 Use a for loop to print all the odd numbers between 1 and 20 (inclusive).
 
+for i in range(1, 21):
+    if i % 2 != 0:#should make sure the number is not even
+        print(i)#should print the odd numbers only
+        #I was able to get this question mostly right y myself but I did need to ask the AI a few clarifing questions to get it right.
+print("\nTesting Problem 4:")
+
 PROBLEM 4: Looping with while
 Write a while loop that starts with n = 10 and keeps dividing n by 2 until n is less than 1. Print the value of n at each step.
 
 PROBLEM 5: Function with Parameters
 Define a function called calculate_area that takes two parameters: length and width. It should return the area of a rectangle. Then call the function with length = 5 and width = 3, and print the result.
 
+def calculate_area(length, width):
+    return length * width#should return the length * the width
+
+result = calculate_area(5, 3)#should store the result of the function
+print(result)#should print out what is stored in the result variable
 
 Example:
 Problem: Write a function called 'is_even' that takes an integer and returns 
