@@ -82,8 +82,9 @@ print("\nTesting Problem 2:")
 print("\nTesting Problem 3:")
 # Add your tests here
 for i in range(1, 21):
-    if i % 2 != 0:
-        print(i)
+    if i % 2 != 0:#should make sure the number is not even
+        print(i)#should print the odd numbers only
+        #I was able to get this question mostly right y myself but I did need to ask the AI a few clarifing questions to get it right.
 print("\nTesting Problem 4:")
 # Add your tests here
 
@@ -95,9 +96,9 @@ def calculate_area(length, width):
     print(calculate_area) #should print the area
 # This was my attempt at solving the problem, I ended up getting it wrong as I made three big mistakes:  1. overwriting the parameters with length = 5 and width = 3, making the parameters pointless, 2. naming a variable the same thing as my function as that can confuse the program and cause bugs, and 3. using print instead of return as that limits the use of the function.
 def calculate_area(length, width):
-    return length * width
+    return length * width#should return the length * the width
 
-result = calculate_area(5, 3)
-print(result)
+result = calculate_area(5, 3)#should store the result of the function
+print(result)#should print out what is stored in the result variable
 #This was the solution I was able to come up with the assistance of the AI (Copilot) which is bettter as it uses the parameters, avoids naming conflicts, and the return adds flexability to the program.
 
