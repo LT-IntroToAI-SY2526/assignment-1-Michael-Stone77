@@ -43,12 +43,11 @@ def factorial(n: int) -> int:
     Returns:
         factorial of the passed in number
     """
-    
-    if n < 24:
-        return n * 3 * 2 * 1
-    else:
-        return n
-
+    result = 1
+    for i in range(1, n + 1):
+        result = result * i
+    # print(result)
+    return result
 
 T = TypeVar("T")
 
@@ -64,10 +63,10 @@ def every_other(lst: List[T]) -> List[T]:
     Returns:
         a list of every of other item in the original list starting with the first
     """
-    for i in range(1, 6):
-        if i % 2 != 0:
-            print(i)
-    raise NotImplementedError("every_other")
+    for T in range(1, 6):
+        if T % 2 != 0:
+            print(T)
+   
 
 
 def sum_list(lst: List[int]) -> int:

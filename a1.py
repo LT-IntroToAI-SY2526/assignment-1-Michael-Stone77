@@ -33,6 +33,10 @@ I have some experience with Java. Can you create 5-7 practice problems that cove
 """
 PROBLEM 1: Variable Assignment and Type Conversion
 Create a variable x with the string value "25". Convert it to an integer and store it in a new variable y. Then print the result of y + 10.
+x = 25 #should declares x and assigns it 25
+x = int("25")#should change the 25 in the original variable to an int
+y = x + 10#should declare a new variable and make it so it stores the x variable + 10
+print(y)#should print the value stored in the y variable.
 
 PROBLEM 2: Conditional Logic
 Write a program that asks the user to input a number. If the number is divisible by both 3 and 5, print "FizzBuzz". If only divisible by 3, print "Fizz". If only divisible by 5, print "Buzz". Otherwise, print the number itself.
@@ -40,11 +44,10 @@ Write a program that asks the user to input a number. If the number is divisible
 PROBLEM 3: Looping with for
 Use a for loop to print all the odd numbers between 1 and 20 (inclusive).
 
-for i in range(1, 21):
+for i in range(1, 21):#should give the range between 1-21
     if i % 2 != 0:#should make sure the number is not even
         print(i)#should print the odd numbers only
         #I was able to get this question mostly right y myself but I did need to ask the AI a few clarifing questions to get it right.
-print("\nTesting Problem 4:")
 
 PROBLEM 4: Looping with while
 Write a while loop that starts with n = 10 and keeps dividing n by 2 until n is less than 1. Print the value of n at each step.
@@ -52,7 +55,7 @@ Write a while loop that starts with n = 10 and keeps dividing n by 2 until n is 
 PROBLEM 5: Function with Parameters
 Define a function called calculate_area that takes two parameters: length and width. It should return the area of a rectangle. Then call the function with length = 5 and width = 3, and print the result.
 
-def calculate_area(length, width):
+def calculate_area(length, width):#should define a function that takes two parameters
     return length * width#should return the length * the width
 
 result = calculate_area(5, 3)#should store the result of the function
@@ -86,13 +89,17 @@ print(f"is_even(7): {is_even(7)}")  # Should print False
 
 print("Testing Problem 1:")
 # Add your tests here
-
+x = 25 #should declares x and assigns it 25
+x = int("25")#should change the 25 in the original variable to an int
+y = x + 10#should declare a new variable and make it so it stores the x variable + 10
+print(y)#should print the value stored in the y variable.
+#while this code works, there is no need to declare x = 25 at the begining. I only need the x = int("25"). But it still works
 print("\nTesting Problem 2:")
 # Add your tests here
 
 print("\nTesting Problem 3:")
 # Add your tests here
-for i in range(1, 21):
+for i in range(1, 21):#should give the range between 1-21
     if i % 2 != 0:#should make sure the number is not even
         print(i)#should print the odd numbers only
         #I was able to get this question mostly right y myself but I did need to ask the AI a few clarifing questions to get it right.
@@ -100,7 +107,7 @@ print("\nTesting Problem 4:")
 # Add your tests here
 
 print("\nTesting Problem 5:")
-def calculate_area(length, width):
+def calculate_area(length, width):#should define a function that takes two parameters
     length = 5 #should make length = 5
     width = 3 #should make width = 3
     calculate_area = length * width #Should multiple the length and width to get 15
