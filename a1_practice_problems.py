@@ -63,9 +63,14 @@ def every_other(lst: List[T]) -> List[T]:
     Returns:
         a list of every of other item in the original list starting with the first
     """
-    for T in range(1, 6):
-        if T % 2 != 0:
-            print(T)
+    return lst[::2]
+
+    # This is the java way
+    # result = []
+    # for index in range(len(lst)):
+    #     if index % 2 == 0:
+    #         result.append(lst[index])
+    # return result
    
 
 
@@ -79,7 +84,12 @@ def sum_list(lst: List[int]) -> int:
     Returns:
         the sum of the passed in list
     """
-    raise NotImplementedError("sum_list")
+     # return sum(lst)
+    total = 0
+    for element in lst:
+        total += element
+    # print(total)
+    return total
 
 
 def mean(lst: List[int]) -> float:
@@ -91,8 +101,8 @@ def mean(lst: List[int]) -> float:
     Returns:
         the mean of the passed in list
     """
-    raise NotImplementedError("mean")
-
+    
+    return sum_list(lst) / len(lst) if lst else 0
 
 def median(lst: List[int]) -> float:
     """Takes an ordered list of numbers, and returns the median of the numbers.
@@ -106,7 +116,11 @@ def median(lst: List[int]) -> float:
     Returns:
         the median of the passed in list
     """
-    raise NotImplementedError("median")
+    if len(lst) % 2 == 1:
+        return lst[len(lst) // 2 ]
+    else:
+        return (lst[len(lst) // 2] + lst[len(lst) // 2 - 1]) / 2
+
 
 
 def duck_duck_goose(lst: List[str]) -> List[str]:
@@ -144,8 +158,9 @@ if __name__ == "__main__":
     ], "every_other of [1,2,3,4,5] failed"
     assert sum_list([1, 2, 3]) == 6, "sum_list of [1,2,3] failed"
     assert mean([1, 2, 3, 4, 5]) == 3, "mean of [1,2,3,4,5] failed"
+    assert mean([]) == 0, "mean of [] failed"
     assert median([1, 2, 3, 4, 5]) == 3, "median of [1,2,3,4,5] failed"
-
+    assert median([1, 2, 3, 4, 5, 6]) == 3.5, "median of [1,2,3,4,5,6] failed"
     names = ["roscoe", "kim", "woz", "solin", "law", "remess"]
     assert duck_duck_goose(names) == ["roscoe", "law"]
 
