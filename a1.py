@@ -40,7 +40,15 @@ print(y)#should print the value stored in the y variable.
 
 PROBLEM 2: Conditional Logic
 Write a program that asks the user to input a number. If the number is divisible by both 3 and 5, print "FizzBuzz". If only divisible by 3, print "Fizz". If only divisible by 5, print "Buzz". Otherwise, print the number itself.
-
+num = int(input("enter a number: "))#Should ask the user to input a number and convert it into an integer
+if num % 3 == 0 and num % 5 == 0:#should check if the number entered is divisible by 5 and 3
+    print("FizzBuzz")#should print the string "FizzBuzz"
+elif num % 3 == 0:#should check if the number entered is divisible by 3
+    print("Fizz")#should print the string "Fizz"
+elif num % 5 == 0:#should check if the number entered is divisible by 5
+    print("Buzz")#should print the string "Buzz"
+else:
+    print(num)#should print the value stored in num
 PROBLEM 3: Looping with for
 Use a for loop to print all the odd numbers between 1 and 20 (inclusive).
 
@@ -96,13 +104,22 @@ print(y)#should print the value stored in the y variable.
 #while this code works, there is no need to declare x = 25 at the begining. I only need the x = int("25"). But it still works
 print("\nTesting Problem 2:")
 # Add your tests here
-
+num = int(input("enter a number: "))#Should ask the user to input a number and convert it into an integer
+if num % 3 == 0 and num % 5 == 0:#should check if the number entered is divisible by 5 and 3
+    print("FizzBuzz")#should print the string "FizzBuzz"
+elif num % 3 == 0:#should check if the number entered is divisible by 3
+    print("Fizz")#should print the string "Fizz"
+elif num % 5 == 0:#should check if the number entered is divisible by 5
+    print("Buzz")#should print the string "Buzz"
+else:
+    print(num)#should print the value stored in num
+#I was able to solve this one with only a little assistence from the AI.
 print("\nTesting Problem 3:")
 # Add your tests here
 for i in range(1, 21):#should give the range between 1-21
     if i % 2 != 0:#should make sure the number is not even
         print(i)#should print the odd numbers only
-        #I was able to get this question mostly right y myself but I did need to ask the AI a few clarifing questions to get it right.
+        #I was able to get this question mostly right by myself but I did need to ask the AI a few clarifing questions to get it right.
 print("\nTesting Problem 4:")
 # Add your tests here
 
