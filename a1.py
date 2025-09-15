@@ -60,6 +60,11 @@ for i in range(1, 21):#should give the range between 1-21
 PROBLEM 4: Looping with while
 Write a while loop that starts with n = 10 and keeps dividing n by 2 until n is less than 1. Print the value of n at each step.
 
+n = 10#should set the n to equal 10
+while n > 1:#should run until the value stored in n is less than 1
+    n = n/2#should divide the value stored in n by 2
+    print(n)#should print the new n value
+    
 PROBLEM 5: Function with Parameters
 Define a function called calculate_area that takes two parameters: length and width. It should return the area of a rectangle. Then call the function with length = 5 and width = 3, and print the result.
 
@@ -122,7 +127,11 @@ for i in range(1, 21):#should give the range between 1-21
         #I was able to get this question mostly right by myself but I did need to ask the AI a few clarifing questions to get it right.
 print("\nTesting Problem 4:")
 # Add your tests here
-
+n = 10#should set the n to equal 10
+while n > 1:#should run until the value stored in n is less than 1
+    n = n/2#should divide the value stored in n by 2
+    print(n)#should print the new n value
+    #got it mostly right, just was missing one thing to update n after every loop through the program.
 print("\nTesting Problem 5:")
 def calculate_area(length, width):#should define a function that takes two parameters
     length = 5 #should make length = 5

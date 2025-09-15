@@ -86,8 +86,8 @@ def sum_list(lst: List[int]) -> int:
     """
      # return sum(lst)
     total = 0
-    for element in lst:
-        total += element
+    for num in lst:
+        total += num
     # print(total)
     return total
 
@@ -116,11 +116,12 @@ def median(lst: List[int]) -> float:
     Returns:
         the median of the passed in list
     """
-    if len(lst) % 2 == 1:
-        return lst[len(lst) // 2 ]
-    else:
-        return (lst[len(lst) // 2] + lst[len(lst) // 2 - 1]) / 2
+    # if len(lst) % 2 == 1:
+    #     return lst[len(lst) // 2 ]
+    # else:
+    #     return (lst[len(lst) // 2] + lst[len(lst) // 2 - 1]) / 2
 
+    return (lst[len(lst) // 2] + lst[len(lst) // 2 - 1]) / 2 if len(lst) % 2 == 0 else lst[len(lst) // 2]
 
 
 def duck_duck_goose(lst: List[str]) -> List[str]:
@@ -142,7 +143,23 @@ def duck_duck_goose(lst: List[str]) -> List[str]:
     Returns:
         the resulting list after playing duck duck goose
     """
-    raise NotImplementedError("duck_duck_goose")
+    position = 0
+    current = ["duck"]
+    while len(lst) > 2:
+        if current == "duck1":
+            current = "duck2"
+            position += 1
+        elif current == "duck2":
+            current = "goose"
+            position += 1
+        else: #current == "goose"
+            current = "duck1"
+            lst.pop(position)
+
+        if position == len(lst):
+            position = 0
+
+    return lst
 
 
 # this line causes the nested code to be skipped if the file is imported instead of run
@@ -151,17 +168,22 @@ if __name__ == "__main__":
     assert absolute(5) == 5, "absolute of 5 failed"
     assert factorial(4) == 24, "factorial of 4 failed"
     assert factorial(5) == 120, "factorial of 5 failed"
-    assert every_other([1, 2, 3, 4, 5]) == [
-        1,
-        3,
-        5,
-    ], "every_other of [1,2,3,4,5] failed"
+    assert factorial(1) == 1, "factorial of 1 failed"
+    assert factorial(0) == 1, "factorial of 0 failed"
+    assert every_other([1, 2, 3, 4, 5]) == [1,3,5], "every_other of [1,2,3,4,5] failed"
+    assert every_other([24, 46, 33, 8]) == [24, 33], "every_other of [1,2,3,4,5] failed"
+
     assert sum_list([1, 2, 3]) == 6, "sum_list of [1,2,3] failed"
+    assert sum_list([54, 23, 9, 17]) == 103, "sum_list of [54, 23, 9, 17] failed"
     assert mean([1, 2, 3, 4, 5]) == 3, "mean of [1,2,3,4,5] failed"
+    assert mean([1, 2, 3, 4, 5, 6]) == 21/6, "mean of [1,2,3,4,5,6] failed"
     assert mean([]) == 0, "mean of [] failed"
     assert median([1, 2, 3, 4, 5]) == 3, "median of [1,2,3,4,5] failed"
     assert median([1, 2, 3, 4, 5, 6]) == 3.5, "median of [1,2,3,4,5,6] failed"
+
     names = ["roscoe", "kim", "woz", "solin", "law", "remess"]
-    assert duck_duck_goose(names) == ["roscoe", "law"]
+    assert duck_duck_goose(names) == ["roscoe", "law"], "failed duck duck goose 1"
+    names = ["miguel", "emma", "franco", "lukas", "maks"]
+    assert duck_duck_goose(names) == ["emma", "lukas"], "failed duck duck goose 2"
 
     print("All tests passed!")
